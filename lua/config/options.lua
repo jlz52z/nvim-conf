@@ -1,6 +1,9 @@
 -- 基础设置
 local set = vim.opt
 
+-- 设置剪贴板为系统剪贴板
+set.clipboard = "unnamedplus"
+
 -- 按键超时时间设置
 set.timeoutlen = 300        -- 映射序列的超时时间（300 毫秒）
 set.ttimeoutlen = 10        -- 终端模式下按键超时（10 毫秒）
