@@ -38,3 +38,5 @@ set.termguicolors = true    -- 启用 24 位 RGB 色彩支持
 set.scrolloff = 8           -- 光标移动时，保持顶部和底部的间距
 set.sidescrolloff = 8       -- 左右滚动时保持间距
 
+-- 主题设置
+vim.cmd.colorscheme "tokyonight"
