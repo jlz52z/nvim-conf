@@ -6,16 +6,17 @@ local function map(mode, lhs, rhs, opts)
   end
   vim.keymap.set(mode, lhs, rhs, options)
 end
-
--- Set <leader> key 
-vim.g.mapleader = " "  -- Set <space> as <leader> key
-vim.g.maplocalleader = " "
 -- https://www.reddit.com/r/vim/comments//2k4cbr/problem_with_gj_and_gk/
 -- Remap 'j' and 'k' to handle display (wrapped) lines properly.
 -- If no count is provided, use 'gj' or 'gk' to move by display lines.
 -- If a count is provided, use the regular 'j' or 'k' to move by actual lines.
 vim.keymap.set("n", "j", "v:count ? 'j' : 'gj'", { noremap = true, silent = true, expr = true })
 vim.keymap.set("n", "k", "v:count ? 'k' : 'gk'", { noremap = true, silent = true, expr = true })
+
+-- 在视觉模式下移动选中代码块
+vim.keymap.set('v', '<S-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<S-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
 
 
 -- Keymap
@@ -40,6 +41,16 @@ local keymaps = {
     ["<leader>w"] = ":w<CR>",          -- Save the file
     ["<leader>x"] = ":x<CR>",          -- Save and exit
     ["<leader>q!"] = ":q!<CR>",        -- Force quit without saving
+
+    -- Clear search highlight after pressing <Esc>
+    ["<Esc>"] = ":nohlsearch<CR><Esc>",
+
+    -- Press P to paste 
+    ["P"] = ":pu<CR>",
+
+    ["<Leader>["] = "<C-o>",
+    ["<Leader>]"] = "<C-i>",
+    ["d"] = '"ad',
   },
 
   -- Insert Mode
