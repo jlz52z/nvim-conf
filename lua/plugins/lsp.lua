@@ -61,15 +61,17 @@ return {
                 on_attach = on_attach,
             })
             -- configure python pyright
-            lspconfig["pyright"].setup({
+            lspconfig.pyright.setup({
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
-                    python = {
-                        analysis = {
-                            autoImportCompletions = true,
-                            autoSearchPaths = true,
-                            useLibraryCodeForTypes = true,
+                    pyright = {
+                        autoImportCompletion = true,
+                        python = {
+                            analysis = {
+                                autoSearchPaths = true,
+                                useLibraryCodeForTypes = true,
+                            },
                         },
                     },
                 },
