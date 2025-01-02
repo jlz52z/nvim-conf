@@ -14,8 +14,8 @@ set.relativenumber = true   -- 显示相对行号
 set.cursorline = true       -- 高亮当前行
 
 -- 缩进设置
-set.tabstop = 2             -- Tab 显示为 4 个空格
-set.shiftwidth = 2          -- 缩进时使用 4 个空格
+set.tabstop = 4             -- Tab 显示为 4 个空格
+set.shiftwidth = 4          -- 缩进时使用 4 个空格
 set.expandtab = true        -- 将 Tab 转为空格
 set.smartindent = true      -- 启用智能缩进
 

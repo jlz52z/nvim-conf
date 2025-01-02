@@ -2,17 +2,17 @@ return {
   "folke/which-key.nvim",
   event = "VeryLazy",
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
+    -- 您的配置可以在这里添加
+    -- 如果留空，将使用默认设置
+    -- 参考下面的配置部分
   },
   keys = {
     {
       "<leader>?",
       function()
-        require("which-key").show({ global = false })
+        require("which-key").show({ plugins = { spelling = true }, show_keys = true })
       end,
-      desc = "Buffer Local Keymaps (which-key)",
+      desc = "Show WhichKey Help",
     },
   },
 }
