@@ -40,3 +40,29 @@ set.sidescrolloff = 8       -- 左右滚动时保持间距
 
 -- 主题设置
 vim.cmd.colorscheme "tokyonight"
+
+-- 自动为 Python 环境安装 pynvim
+local function ensure_pynvim_installed()
+    local python3 = vim.g.python3_host_prog or "python3"
+    -- 检查 pip 是否可用
+    local check_pip_handle = io.popen(python3 .. " -m pip --version 2>/dev/null")
+    local pip_version = check_pip_handle:read("*a")
+    check_pip_handle:close()
+
+    if pip_version == "" then
+        print("Error: pip is not installed. Please install pip for " .. python3)
+        return
+    end
+
+    -- 检查 pynvim 是否已经安装
+    local check_pynvim_handle = io.popen(python3 .. " -m pip show pynvim 2>/dev/null")
+    local pynvim_info = check_pynvim_handle:read("*a")
+    check_pynvim_handle:close()
+
+    if pynvim_info == "" then
+        vim.cmd("! " .. python3 .. " -m pip install pynvim")
+        print("Installed pynvim for Python 3 provider.")
+    end
+end
+
+ensure_pynvim_installed()

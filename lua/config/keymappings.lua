@@ -37,11 +37,6 @@ local keymaps = {
     ["<leader>>"] = "<C-w>>",          -- Increase window width
     ["<leader><"] = "<C-w><",          -- Decrease window width
 
-    -- File operations
-    ["<leader>w"] = ":w<CR>",          -- Save the file
-    ["<leader>x"] = ":x<CR>",          -- Save and exit
-    ["<leader>q!"] = ":q!<CR>",        -- Force quit without saving
-
     -- Clear search highlight after pressing <Esc>
     ["<Esc>"] = ":nohlsearch<CR><Esc>",
 
