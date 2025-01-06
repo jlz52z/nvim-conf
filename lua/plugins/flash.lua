@@ -263,7 +263,7 @@ return {
         { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
         -- Jump to a line
         {
-            "jl",
+            "<leader>j",
             mode = { "n", "x", "o" },
             function()
                 require("flash").jump({
