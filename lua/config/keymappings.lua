@@ -26,10 +26,10 @@ local keymaps = {
     -- Window operations
     ["<leader>vs"] = ":vsplit<CR>",     -- Split the window vertically
     ["<leader>hs"] = ":split<CR>",      -- Split the window horizontally
-    ["<C-h>"] = "<C-w>h",              -- Move focus to the window on the left
-    ["<C-l>"] = "<C-w>l",              -- Move focus to the window on the right
-    ["<C-j>"] = "<C-w>j",              -- Move focus to the window below
-    ["<C-k>"] = "<C-w>k",              -- Move focus to the window above
+--    ["<C-h>"] = "<C-w>h",              -- Move focus to the window on the left
+--    ["<C-l>"] = "<C-w>l",              -- Move focus to the window on the right
+--    ["<C-j>"] = "<C-w>j",              -- Move focus to the window below
+--    ["<C-k>"] = "<C-w>k",              -- Move focus to the window above
     ["<leader>q"] = "<C-w>c",          -- Close the current window
     ["<leader>o"] = "<C-w>o",          -- Close all other windows
     ["<leader>+"] = "<C-w>+",          -- Increase window height
